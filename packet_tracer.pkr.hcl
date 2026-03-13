@@ -49,6 +49,8 @@ build {
       echo 'BROWSER="firefox"' >>  /home/cisco/.bash_profile
       echo 'spice-vdagent &\nexec openbox-session' >> /home/cisco/.xinitrc
       echo "hostshare  /home/cisco/pt  9p  trans=virtio,version=9p2000.L,rw,user,_netdev  0  0" >> /etc/fstab
+      mkdir /home/cisco/.config/openbox/
+      echo "xrandr -s 1920x1080" >> /home/cisco/.config/openbox/autostart.sh
       EOF
     ]
   }

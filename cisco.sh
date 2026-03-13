@@ -8,7 +8,7 @@ exec qemu-system-x86_64 \
 	-drive file=./qemu/CiscoPacketTracer,format=qcow2 \
         -nic bridge,br=br0,model=virtio-net-pci,mac=52:54:01:12:34:87 \
 	-vga qxl \
-	-spice port=5090,disable-ticketing=on,gl=on \
+	-spice port=5090,disable-ticketing=on \
 	-display spice-app \
 	-device virtio-serial-pci \
     	-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 \
