@@ -6,7 +6,7 @@ source "qemu" "example" {
   shutdown_command  = "echo 'cisco' | sudo -S shutdown -P now"
   disk_size         = "50000M"
   cpus              = 2
-  memory            = 5000
+  memory            = 2000
   format            = "qcow2"
   accelerator       = "kvm"
   http_directory    = "http"
@@ -42,9 +42,9 @@ build {
   provisioner "shell" {
     inline = [<<-EOF
       DEBIAN_FRONTEND=noninteractive
-      apt-get install -y libfuse2 libpulse0 fuse libpcre2-dev xdg-utils spice-vdagent xorg openbox surf
-      dpkg -i /tmp/CiscoPacketTracer.deb
-      yes 2 | apt-get install -fy
+      apt-get install -y libfuse2 libpulse0 fuse libpcre2-dev xdg-utils spice-vdagent xorg openbox surf neovim
+      yes 2 | dpkg -i /tmp/CiscoPacketTracer.deb
+      apt-get install -fy
       echo 'if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi' >>  /home/cisco/.bash_profile
       echo 'BROWSER="firefox"' >>  /home/cisco/.bash_profile
       echo 'spice-vdagent &\nexec openbox-session' >> /home/cisco/.xinitrc
