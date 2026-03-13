@@ -1,0 +1,4 @@
+*.kcow2
+qemu
+*.deb
+pt/*
