@@ -11,7 +11,6 @@ exec qemu-system-x86_64 \
         -nic bridge,br=br0,model=virtio-net-pci,mac=52:54:01:12:34:87 \
 	## improve gui performance
 	-vga qxl \
-	#-object secret,id="secret-1",data="secret",format=raw \
 	# cinfigure scpice access
 	-spice port=5090,disable-ticketing=on,gl=on \
 	-display spice-app \
