@@ -1,4 +1,6 @@
 *.kcow2
 qemu
 *.deb
+*.iso
 pt/*
+drive/*
